@@ -23,59 +23,112 @@ Data: http://datadryad.org/resource/doi:10.5061/dryad.q5j65/1
 
 **1. Load the data into a new object called `homerange`.**
 ```{r}
-
+homerange <- read.csv("data/Tamburelloetal_HomeRangeDatabase.csv")
 ```
 
 **2. What is the structure of the `homerange` data? Does it have any NA's? Do a quick exploratory analysis of your choice below.**
 ```{r}
-
+summary(homerange)
 ```
 
 ```{r}
-
+glimpse(homerange)
 ```
+```{r}
+names(homerange)
+```
+
+
 
 **3. Which animal groups are represented in the data? Make a plot that shows the number in each class.**
 ```{r}
-
+ggplot(data = homerange,
+       mapping = aes(x=class))+
+  geom_bar()
 ```
 
 **4. Are there more carnivores or herbivores represented in the data? Make a plot that shows the number in each trophic guild.**
 ```{r}
-
+ggplot(data = homerange,
+       mapping = aes(x=trophic.guild))+
+  geom_bar()
 ```
 
 **5. Which herbivorous mammals have homeranges greater than 1,000,000 m²? Show only the common name, order, mean homerange size, and mean body mass. Arrange the data in descending order by homerange size and show only the top 10 species.**
 ```{r}
-
+homerange %>%
+  select(taxon, trophic.guild, common.name, order, mean.hra.m2, mean.mass.g) %>%
+  filter(trophic.guild=="herbivore" & mean.hra.m2> 1000000) %>%
+  slice_max(mean.hra.m2, n=10) %>%
+  arrange(desc(mean.hra.m2))
 ```
 
 **6. Which two species have the largest and smallest homerange sizes?**
 ```{r}
-
+homerange %>%
+  select(species, mean.hra.m2,) %>%
+  slice_max(mean.hra.m2, n=10) %>%
+  arrange(desc(mean.hra.m2))
+#tarandus has the largest homerange otherwise known as the reindeer
 ```
 
 ```{r}
-
+homerange %>%
+  select(species, mean.hra.m2,) %>%
+  arrange(mean.hra.m2)
+  #Hipoliti has the smallest homerange.
+  
 ```
 
 **7. Which carnivorous mammals have the largest homeranges?**
 ```{r}
-
+homerange %>%
+  select(taxon, species, trophic.guild, mean.hra.m2) %>%
+  filter(taxon=="mammals" & trophic.guild=="carnivore") %>%
+  arrange(desc(mean.hra.m2))
+#Jubatus has the largest homerange
 ```
 
 **8. Is there a relationship between body mass and homerange size? Make a scatterplot to show this relationship. Be sure to include appropriate labels and a title.**
 ```{r}
+ggplot(data = homerange,
+       mapping = aes(x= mean.mass.g, y= mean.hra.m2))+
+  geom_point()+
+  geom_smooth()+
+  scale_x_log10()+
+  scale_y_log10()+ 
+  labs(title = "Relationship of Mass and Homerange")+
+  xlab("Bodyweight")+
+  ylab("Homerange")
 
 ```
 
 **9. Use filter to extract the data for only birds and mammals. Then make a plot that compares the homerange sizes of these two groups. Be sure to include appropriate labels and a title.**
+
 ```{r}
+my_tibble <- homerange %>% 
+  select(taxon, mean.hra.m2)%>%
+  filter(taxon=="mammals" |taxon=="birds")
+```
+
+```{r}
+ggplot(data = my_tibble,
+       mapping= aes(x=taxon,y=mean.hra.m2))+
+  scale_y_log10()+
+  geom_boxplot()+
+  labs(title= "Mammmal vs Avian Homerange")+
+  xlab("Taxon")+
+  ylab("Homerange m2")
 
 ```
 
 **10. Do one additional exploratory analysis of your choice. Before writing the code, write the question you are trying to answer. The question should be biologically meaningful and appropriate for the data. It must include at least one `filter()`, `select()`, and `arrange()`.**
 ```{r}
+homerange %>%
+  select(dimension, trophic.guild, mean.hra.m2)%>%
+  filter(dimension!="2D")%>%
+  arrange(desc(mean.hra.m2))%>%
+  slice_max(mean.hra.m2, n=10)
 
 ```
 
