@@ -129,14 +129,26 @@ elephants %>%
   ggplot(aes(x= estimated_age_years, y= tusk_length_in_cm))+
   geom_point(na.rm = T)+
   geom_smooth(method = lm, se=T)
+
+elephants %>%
+  filter(years_of_sample_collection=="2005-13")%>%
+  ggplot(aes(x= estimated_age_years, y= tusk_length_in_cm))+
+  geom_point(na.rm = T)+
+  geom_smooth(method = lm, se=T)
+
+#The data does support the arguement, we can clearly see in the second scatter plot after poaching that tusk length took a dip as the elephants aged meaning the older elephants surviving grew smaller tusk.
 ```
 
 **12. Male elephants reach effective sexual maturity at 25 years while females are sexually mature at 12 years. Make a new dataframe that extracts only the males and females at sexual maturity. Then, make a plot that shows the range of tusk length between the two sample periods for these mature elephants.**   
-\
-\
-\
-\
-\
+
+```{r}
+elephants %>%
+  select(sex, estimated_age_years, tusk_length_in_cm, years_of_sample_collection)%>%
+  filter(sex=="m" & estimated_age_years>=25 | sex=="f" & estimated_age_years>=12)%>%
+  ggplot(aes(x= years_of_sample_collection, y= tusk_length_in_cm))+
+  geom_boxplot(na.rm = T)
+```
+
 
 ## Submit the Homework
 1. Save your work and knit the .rmd file.  
