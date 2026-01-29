@@ -1,0 +1,70 @@
+---
+title: "Mid term 1 study sheet"
+author: "Luis Barraza-Tirado"
+date: "`r Sys.Date()`"
+output:
+  html_document: 
+    theme: spacelab
+---
+
+## Instructions
+Answer the following questions and/or complete the exercises in RMarkdown. Please embed all of your code and push the final work to your repository. Your report should be organized, clean, and run free from errors. Remember, you must remove the `#` for any included code chunks to run.  
+
+Lab 1 codes
+None 
+
+Lab 2 codes
+
+getwd() #allows us to view the location we are working on 
+
+'setwd' #allows us to move a file to a desired location
+
+the arrow # <- is a symbol that allows meaning to be attributed to R you can do it by doing command dash or alt dash on windows.
+
+You can attribute meanings to sayings and add them to formulas, the sum of the formulas can then be assigned meaning using said arrows.
+
+? in front of a command can dirrect you to the R studio command help section
+
+c() allows for multiple things to be combined and plugged into a command at once
+
+class() allows us to see what type of data we are working with 
+
+to change the class of data you can use is.integer(nameofdata) or is.numeric for the same expected result
+
+whenever a funtion doesn't work as espected due to any na's just plug in a comma followed by na.rm= T or True
+
+
+Lab 3 codes
+
+When dealing with characters remember to put a "" around it so R can read it
+
+c(#:other#) creates a counting sequence
+
+tibble() allows you to enter multiple data points into a table 
+
+names(data) allows you to name all the columns of data
+
+$ sign in code is a way to go through with a function connecting both the dataset name and the column of interest
+
+read_csv() allows us to read csv data into R instantly and allows us to read teh data.
+
+summary() and glimpse() are really good ways to see the data at a quick glance.
+
+
+
+Lab 4
+
+ggplot() is a starting function that allows you to access data, then map the data graph out using the aes function to specify the x and y sections of the graph
+
+geom_type of chart (na.rm=T (gets rid of na's)) is then used to specify what type of chart we would like, we can even modify the type of chart using other functions like geom_smooth(method=lm, se=T) to add a linear line following the data
+
+you can even use geom_type of chart(mapping=aes(color or shape= data you are trying to visually seperate))
+
+labs(title="your title")
+
+for bar graphs you can follow the differentiation with a comma, position= "dodge" to have different collored bars next to eachother for easy comparison.
+
+
+
+
+
