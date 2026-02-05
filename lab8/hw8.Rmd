@@ -87,15 +87,31 @@ fisheries_clean %>%
 ```
 
 9. How has fishing of this species changed over the last decade (2013-2023)? Create a  plot showing total catch by year for this species.
+
+```{r}
+
+```
+
+
 ```{r}
 fisheries_clean %>%
   filter(period %in% 2013:2023 & common_name=="Anchoveta(=Peruvian anchovy)") %>%
-  group_by(period, common_name)
+  mutate(period=as.factor(period)) %>%
+  group_by(period, common_name) %>%
+  ggplot(mapping = aes(x=period, y=catch))+
+  scale_y_log10()+
+  geom_boxplot()
+  
 ```
 
 10. Perform one exploratory analysis of your choice. Make sure to clearly state the question you are asking before writing any code.
 ```{r}
-
+#Does status have any corelation to catch?
+fisheries_clean %>%
+  mutate(status=as.factor(status)) %>%
+  ggplot(mapping = aes(y=catch, x=status))+
+  scale_y_log10()+
+  geom_boxplot()
 ```
 
 ## Knit and Upload
