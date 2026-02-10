@@ -62,6 +62,15 @@ sydneybeaches_long %>%
   select("site", "enterococci_cfu_100ml", "Date")
 ```
 
+
+```{r}
+sydneybeaches_long %>%
+  pivot_longer(-site,
+               names_to= "data",
+               values_to = "enterococci_cfu_100ml")
+```
+
+
 6. We haven't dealt much with dates yet, but separate the date into columns day, month, and year. Do this on the `sydneybeaches_long` data.
 ```{r}
 #sydneybeaches_long %>%
