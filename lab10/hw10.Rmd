@@ -42,20 +42,29 @@ sharks %>%
 
 2.  Make a plot that shows the total number of incidents per county.
 ```{r}
-sharks %>% #Incident num is the id not the num of incidents
+sharks %>% #Incident num is the id not the num of incidents so reorder will not work
   arrange(desc(incident_num)) %>%
-  ggplot(aes(x=reorder(county, incident_num), y=incident_num))+
+  ggplot(aes(x=county, y=incident_num))+
   geom_col()+
-  theme(axis.text.x=element_text(angle = 45, hjust=1))
+  theme(axis.text.x=element_text(angle = 45, hjust=1))+
+  labs(title = "Number of Incidents per County",
+       x="Coastline counties",
+       y= "incident reports")
 ```
 
 3. Are there months of the year when incidents are more likely to occur? Make a plot that shows the total number of incidents by month. Which month has the highest number of incidents?  
 ```{r}
-
+monthobs <- sharks %>%
+  select("incident_num", "month", "location") %>%
+  mutate(month=as.factor(month)) %>%
+  count(month)
 ```
 
 ```{r}
-
+monthobs %>%
+  ggplot(aes(x= month, y=n))+
+  geom_col()+
+  labs(title =)
 ```
 
 4. Is there a time of day when most attacks occur? Make a plot that shows the total number of incidents by time of day. Which time of day has the highest number of incidents?  
