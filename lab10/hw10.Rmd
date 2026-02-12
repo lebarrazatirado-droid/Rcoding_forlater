@@ -41,11 +41,20 @@ sharks %>%
 ```
 
 2.  Make a plot that shows the total number of incidents per county.
+
 ```{r}
-sharks %>% #Incident num is the id not the num of incidents so reorder will not work
-  arrange(desc(incident_num)) %>%
-  ggplot(aes(x=county, y=incident_num))+
-  geom_col()+
+countyobs <- sharks %>%
+  select("county", "incident_num") %>%
+  count(county)
+countyobs
+```
+
+
+```{r}
+countyobs %>% #Incident num is the id not the num of incidents so reorder will not work
+  arrange(desc(n)) %>%
+  ggplot(aes(x=reorder(county, n), y=n))+
+  geom_col(fill= "red2")+
   theme(axis.text.x=element_text(angle = 45, hjust=1))+
   labs(title = "Number of Incidents per County",
        x="Coastline counties",
@@ -57,24 +66,43 @@ sharks %>% #Incident num is the id not the num of incidents so reorder will not 
 monthobs <- sharks %>%
   select("incident_num", "month", "location") %>%
   mutate(month=as.factor(month)) %>%
-  count(month)
+  count(month) %>%
+  arrange(desc(n))
 ```
 
 ```{r}
 monthobs %>%
-  ggplot(aes(x= month, y=n))+
-  geom_col()+
-  labs(title =)
+  ggplot(aes(x=reorder(month, n), y=n))+
+  geom_col(fill= "red2")+
+  labs(title = "Number of Incidents per Month",
+       x= "Months by the number",
+       y= "Number of incidents") +
+  theme(plot.title=element_text(size=rel(1.5),hjust = .5))
 ```
 
 4. Is there a time of day when most attacks occur? Make a plot that shows the total number of incidents by time of day. Which time of day has the highest number of incidents?  
 ```{r}
-
+timeobs <- sharks %>%
+  select("incident_num", "time") %>%
+  mutate(time=as.factor(time), na.rm=T) 
+timeobs %>%
+  count(time)%>%
+ggplot(aes(x=reorder(time, n), y=n))+
+  geom_col(fill= "red2")+
+  labs(title = "Number of Incidents per Time",
+       x= "Time by the number",
+       y= "Number of incidents") +
+  theme(plot.title=element_text(size=rel(1.5),hjust = .25))+
+  theme(axis.text.x=element_text(angle =90))
+#11am has the highest number of incidents although it is important to note that a lot of the times were not logged so this could be incorrect.
 ```
 
 5. How do the number and types of injuries compare by county? Make a table that shows the number of injury types by county. Which county has the highest number incidents? (hint: your table should be in wide format)
 ```{r}
-
+# sharks %>%
+#  drop_na(sharks) %>%
+ # pivot_wider(names_from = "injury",
+   #           values_from = "values")
 ```
 
 6. Use the table from #5 to make a plot that shows the total number of incidents by county.
@@ -84,23 +112,50 @@ monthobs %>%
 
 7. In the data, `mode` refers to a type of activity. Which activity is associated with the highest number of incidents?
 ```{r}
-
+modeobs <- sharks %>%
+  select("incident_num", "mode") %>%
+  count(mode) 
+modeobs
+#Surfing/boarding lead to the highest amounts of incidents.
 ```
 
 8. Make a plot that compares the number of incidents by activity.
 ```{r}
-
+modeobs %>%
+  ggplot(aes(x=reorder(mode,n), y=n))+
+  geom_col(fill= "purple1")+
+  labs(title = "Attacks vs Means of activity",
+       x="Activities",
+       y="Number of Attacks")+
+  theme(plot.title=element_text(size=rel(1.5),hjust = .25))+
+  theme(axis.text.x=element_text(angle =270))
 ```
 
 9. Which shark species is involved in the highest number of incidents?  
 ```{r}
-
+sharkobs <- sharks %>%
+  select("species","incident_num") %>%
+  count(species)
+sharkobs
+#The great white is involved in the most amount of injuries
 ```
 
 10. Are all incidents involving Great White's fatal? Make a plot that shows the number and types of incidents for Great White's only.  
+
 ```{r}
+sharks %>%
+  filter(species=="White") %>%
+  count(injury) %>%
+  ggplot(aes(x=reorder(injury, n), y=n)) +
+  geom_col(fill="gray55")+
+  labs(title = "Great White's injury counts",
+       x= "Injury types",
+       y= "Number of injuries") +
+  theme(plot.title=element_text(size=rel(1.5),hjust = .25))+
+  theme(axis.text.x=element_text(angle =60))
 
 ```
+
 
 ## Knit and Upload
 Please knit your work as an .html file and upload to Canvas. Homework is due before the start of the next lab. No late work is accepted. Make sure to use the formatting conventions of RMarkdown to make your report neat and clean! 
