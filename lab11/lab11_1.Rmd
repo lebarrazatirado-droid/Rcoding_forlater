@@ -38,6 +38,11 @@ For these exercises, we are going to use [Gapminder](https://www.gapminder.org/d
 gap <- read_csv("data/gapminder.csv") %>% clean_names()
 ```
 
+```{r}
+glimpse(gap)
+```
+
+
 ## Line plots
 Line plots are great when you need to show changes over time. Let's see if we can find downturns in the US economy between 2000-2025.  
 
