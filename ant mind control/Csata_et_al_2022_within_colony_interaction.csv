@@ -1,0 +1,67 @@
+ColCode2,IndCode,ColCode1,CorpseCode,Infection,Test,Dummy,Carrying,Antennating,Mand_gapping,Biting,Dragging,Autogrooming,Grooming,Total,Adverse
+BF2,BF2.2,BF2,BF2.2,I-I,I-I untreated,Untreated,0,2,0,0,0,1,0,2,0
+BF2,BF2.3,BF2,BF2.3,I-I,I-I untreated,Untreated,0,5,0,0,0,3,0,5,0
+BF2,BF2.1,BF2,BF2.1,I-I,I-I untreated,Untreated,0,3,1,0,0,3,0,4,1
+BF6,BF6.5,BF6,BF6.5,I-I,I-I untreated,Untreated,0,2,0,0,0,2,0,2,0
+BF7,BF7.7,BF7,BF7.7,I-I,I-I untreated,Untreated,0,1,0,0,0,3,0,1,0
+BF7,BF7.9,BF7,BF7.9,I-I,I-I untreated,Untreated,0,0,0,0,0,6,0,0,0
+BF7,BF7.8,BF7,BF7.8,I-I,I-I untreated,Untreated,0,5,0,0,0,1,0,5,0
+BF6,BF6.4,BF6,BF6.4,I-I,I-I untreated,Untreated,0,1,0,0,0,6,0,1,0
+BF6,BF6.6,BF6,BF6.6,I-I,I-I untreated,Untreated,0,1,0,0,0,7,0,1,0
+BT6F,BT6F.4,BT6F,BT6F.1,I-I,I-I washed,Washed,0,2,0,0,0,2,0,4,0
+BT6F,BT6F.5,BT6F,BT6F.2,I-I,I-I washed,Washed,0,1,0,0,0,1,0,2,0
+BT6F,BT6F.6,BT6F,BT6F.3,I-I,I-I washed,Washed,0,3,0,0,0,1,0,4,0
+BT4F,BT4F.1,BT4F,BT4F.1,I-I,I-I washed,Washed,0,6,0,0,0,0,0,6,0
+BT4F,BT4F.2,BT4F,BT4F.2,I-I,I-I washed,Washed,0,3,0,0,0,1,0,4,0
+BT4F,BT4F.3,BT4F,BT4F.3,I-I,I-I washed,Washed,0,5,0,0,0,0,0,5,0
+BT2F,BT2F.1,BT2F,BT2F.1,I-I,I-I washed,Washed,0,6,0,0,0,0,0,6,0
+BT2F,BT2F.2,BT2F,BT2F.2,I-I,I-I washed,Washed,0,3,0,0,0,0,0,3,0
+BT2F,BT2F.3,BT2F,BT2F.3,I-I,I-I washed,Washed,0,2,0,0,0,0,0,2,0
+BT2F,BT2F.1,BT2F,BT2F.1,I-I,I-I extract,Extract,0,3,0,0,0,3,0,3,0
+BT2F,BT2F.2,BT2F,BT2F.2,I-I,I-I extract,Extract,0,4,1,0,0,2,0,5,1
+BT2F,BT2F.3,BT2F,BT2F.3,I-I,I-I extract,Extract,0,3,0,1,0,1,0,4,1
+BT4F,BT4F.1,BT4F,BT4F.1,I-I,I-I extract,Extract,0,5,0,0,0,0,0,5,0
+BT4F,BT4F.2,BT4F,BT4F.2,I-I,I-I extract,Extract,0,3,0,0,0,2,0,3,0
+BT4F,BT4F.3,BT4F,BT4F.3,I-I,I-I extract,Extract,0,2,0,0,0,1,0,2,0
+BT1F,BT1F.1,BT1F,BT1F.1,I-I,I-I extract,Extract,1,3,0,0,0,1,0,4,0
+BT1F,BT1F.2,BT1F,BT1F.2,I-I,I-I extract,Extract,0,5,0,0,0,9,0,5,0
+BT1F,BT1F.3,BT1F,BT1F.3,I-I,I-I extract,Extract,0,2,0,0,0,3,0,2,0
+B3NF,B3NF.4,B3NF,B3NF.1,U-U,U-U untreated,Untreated,0,5,0,0,0,0,0,5,0
+B3NF,B3NF.5,B3NF,B3NF.2,U-U,U-U untreated,Untreated,0,5,0,0,0,1,0,5,0
+B3NF,B3NF.6,B3NF,B3NF.3,U-U,U-U untreated,Untreated,0,1,0,0,0,2,0,1,0
+B4NF,B4NF.7,B4NF,B4NF.4,U-U,U-U untreated,Untreated,0,2,0,0,0,1,0,2,0
+B5NF,B5NF.10,B5NF,B5NF.7,U-U,U-U untreated,Untreated,0,7,0,0,0,1,0,7,0
+B5NF,B5NF.11,B5NF,B5NF.8,U-U,U-U untreated,Untreated,0,3,0,0,0,1,0,3,0
+B4NF,B4NF.8,B4NF,B4NF.5,U-U,U-U untreated,Untreated,4,2,0,4,0,1,0,10,4
+B5NF,B5NF.12,B5NF,B5NF.9,U-U,U-U untreated,Untreated,0,4,0,0,0,1,0,4,0
+B4NF,B4NF.9,B4NF,B4NF.6,U-U,U-U untreated,Untreated,0,1,0,0,0,0,0,1,0
+BT3NF,BT3NF.1,BT3NF,BT3NF.1,U-U,U-U washed,Washed,0,1,0,0,0,0,0,1,0
+BT3NF,BT3NF.2,BT3NF,BT3NF.2,U-U,U-U washed,Washed,0,7,0,0,0,2,0,9,0
+BT3NF,BT3NF.3,BT3NF,BT3NF.3,U-U,U-U washed,Washed,0,1,0,0,0,1,0,2,0
+BT10NF,BT10NF.1,BT10NF,BT10NF.1,U-U,U-U washed,Washed,0,7,0,0,0,3,0,10,0
+BT10NF,BT10NF.2,BT10NF,BT10NF.2,U-U,U-U washed,Washed,0,5,0,0,0,2,0,7,0
+BT10NF,BT10NF.3,BT10NF,BT10NF.3,U-U,U-U washed,Washed,0,5,0,0,0,1,0,6,0
+BT7NF,BT7NF.1,BT7NF,BT7NF.1,U-U,U-U washed,Washed,0,5,0,0,0,0,0,5,0
+BT7NF,BT7NF.2,BT7NF,BT7NF.2,U-U,U-U washed,Washed,0,2,0,0,0,0,0,2,0
+BT7NF,BT7NF.3,BT7NF,BT7NF.3,U-U,U-U washed,Washed,0,1,0,0,0,0,0,1,0
+BT7NF,BT7NF.1,BT7NF,BT7NF.1,U-U,U-U extract,Extract,0,1,0,0,0,0,0,1,0
+BT7NF,BT7NF.2,BT7NF,BT7NF.2,U-U,U-U extract,Extract,0,2,0,0,0,1,0,2,0
+BT7NF,BT7NF.3,BT7NF,BT7NF.3,U-U,U-U extract,Extract,0,1,0,0,0,0,0,1,0
+BT10NF,BT10NF.1,BT10NF,BT10NF.1,U-U,U-U extract,Extract,0,2,1,0,0,4,0,3,1
+BT10NF,BT10NF.2,BT10NF,BT10NF.2,U-U,U-U extract,Extract,0,2,0,0,0,3,0,2,0
+BT10NF,BT10NF.3,BT10NF,BT10NF.3,U-U,U-U extract,Extract,0,1,0,0,0,4,0,1,0
+BT3NF,BT3NF.1,BT3NF,BT3NF.1,U-U,U-U extract,Extract,0,5,0,0,0,1,0,5,0
+BT3NF,BT3NF.2,BT3NF,BT3NF.2,U-U,U-U extract,Extract,0,3,0,0,0,1,0,3,0
+BT3NF,BT3NF.3,BT3NF,BT3NF.3,U-U,U-U extract,Extract,0,2,0,0,0,1,0,2,0
+B4NF,B4NF.7,B4NF,B4NF.1,U-U,Corpse+C23,Corpse+C23,0,8,0,0,0,0,0,8,0
+B4NF,B4NF.9,B4NF,B4NF.3,U-U,Corpse+C23,Corpse+C23,0,6,2,2,0,0,0,10,4
+B5NF,B5NF.3,B5NF,B5NF.3,U-U,Corpse+C23,Corpse+C23,0,5,0,0,0,0,0,5,0
+B5NF,B5NF.1,B5NF,B5NF.1,U-U,Corpse+C23,Corpse+C23,0,5,0,0,0,0,0,5,0
+B5NF,B5NF.2,B5NF,B5NF.2,U-U,Corpse+C23,Corpse+C23,0,2,0,0,0,2,0,2,0
+B4NF,B4NF.8,B4NF,B4NF.2,U-U,Corpse+C23,Corpse+C23,0,2,0,0,0,1,0,2,0
+B5NF,B5NF.1,B5NF,B5NF.1,U-U,U-U Extract+C23,Extract+C23,0,2,0,0,0,0,0,2,0
+B5NF,B5NF.3,B5NF,B5NF.3,U-U,U-U Extract+C23,Extract+C23,0,3,0,0,0,0,0,3,0
+B5NF,B5NF.2,B5NF,B5NF.2,U-U,U-U Extract+C23,Extract+C23,5,0,0,0,0,0,0,5,0
+B4NF,B4NF.9,B4NF,B4NF.3,U-U,U-U Extract+C23,Extract+C23,1,7,0,0,0,1,0,8,0
+B4NF,B4NF.8,B4NF,B4NF.2,U-U,U-U Extract+C23,Extract+C23,1,5,0,1,0,0,0,7,1
+B4NF,B4NF.7,B4NF,B4NF.1,U-U,U-U Extract+C23,Extract+C23,0,4,0,0,0,0,0,4,0
