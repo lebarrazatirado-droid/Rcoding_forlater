@@ -159,11 +159,27 @@ gapminder %>%
 
 10. Do one analysis of your choice that includes a table and plot as outputs.
 ```{r}
+avglex_percountry <- gapminder %>%
+  select("year", "country", "lex", "gdp") %>%
+  filter(year %in% c(1925:2025) ) %>%
+  group_by(country) %>%
+  summarize(mean_lex=mean(lex, na.rm=T)) %>%
+  arrange(desc(mean_lex)) %>%
+  slice_max(mean_lex, n=15)
+  avglex_percountry
 
 ```
 
 ```{r}
-
+avglex_percountry %>%
+  ggplot(aes(x=reorder(country, mean_lex), y=mean_lex))+
+  geom_col(color="black", fill="cyan3")+
+  labs(title = "Highest Average Life Expectancy per Country",
+       x="Country",
+       y="Average Life Expectancy")+
+  theme(plot.title=element_text(size=rel(1.5),hjust = .5)) +
+  theme(axis.text.x=element_text(angle = 45, hjust=1))
+  
 ```
 
 ## Knit and Upload
