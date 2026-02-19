@@ -1,9 +1,7 @@
 ---
 title: "Lab 12 AI"
 date: "`r Sys.Date()`"
-output:
-  slidy_presentation: default
-  ioslides_presentation: default
+output: ioslides_presentation
 ---
 
 ```{r setup, include=FALSE}
@@ -42,3 +40,10 @@ library("jpeg")
 6. Data, privacy, ownership, and responsibility have not been responsibly addressed.  
 7. Last year, the big AI companies spent $400B on data centers. What is their plan for ROI?
 8. Nothing on the internet is free.  
+
+
+##Hw 12
+1. Decide on a dataset. Don't forget the og paper.
+2. Check your email for Ledford announcement
+3. Make a new repository for your data. You need to add your groupmates as collaborators.
+4. BIS15L_W2026_Group6
