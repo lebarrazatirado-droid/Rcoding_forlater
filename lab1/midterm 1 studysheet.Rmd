@@ -13,7 +13,7 @@ Answer the following questions and/or complete the exercises in RMarkdown. Pleas
 Lab 1 codes
 None 
 
-Lab 2 codes
+####Lab 2 codes
 
 getwd() #allows us to view the location we are working on 
 
@@ -34,7 +34,7 @@ to change the class of data you can use is.integer(nameofdata) or is.numeric for
 whenever a funtion doesn't work as espected due to any na's just plug in a comma followed by na.rm= T or True
 
 
-Lab 3 codes
+####Lab 3 codes
 
 When dealing with characters remember to put a "" around it so R can read it
 
@@ -52,7 +52,7 @@ summary() and glimpse() are really good ways to see the data at a quick glance.
 
 
 
-Lab 4
+#####Lab 4
 
 ggplot() is a starting function that allows you to access data, then map the data graph out using the aes function to specify the x and y sections of the graph
 
@@ -60,11 +60,77 @@ geom_type of chart (na.rm=T (gets rid of na's)) is then used to specify what typ
 
 you can even use geom_type of chart(mapping=aes(color or shape= data you are trying to visually seperate))
 
-labs(title="your title")
+labs(title="your title", x="x axis", y="y axis")
 
 for bar graphs you can follow the differentiation with a comma, position= "dodge" to have different collored bars next to eachother for easy comparison.
 
 
+#### Lab 5 codes
 
+glimpse() allows us to see a general summary of column names and some values
+
+summary() does something similar to glimpse but follows it up with multiple mean calcs that let us easily identify NA's 
+
+select() allows us to select and view only specific columns, (REQUIRES PIPE)
+
+select(Startcol:Endcol) easier way to select a range of columns that captures start, end, and everything in between.
+
+select(!problemcol) selects everything else besides !col essentially gets rid.
+can also put ! before a c() function to get rid of multiple cols
+
+select(contains("measurment")) selects multiple cols with shared measurment
+
+select(starts_with("XXX")) self explanatory can also use ends_with
+
+select(where(is.numeric)) self explanatory
+
+rename(new name=old name) renames columns in a data frame only 
+
+filter(col=="variable") paired with or without select looks for data only with selected "variable"
+
+filter(numcol>=greater or equal to num) self explan, can use < too
+
+Filter(uselesscol!="variable") gets rid of variable
+
+filter(col %in% c(num, num)) Looks for multiple numerical values to filter
+
+filter(between(col, num, num)) Looks for nums and in between nums
+
+filter(near(col, num, tol= numrange)) looks near the range of num
+
+filter(col=="var" (& or |) col="var") & applies both filters | looks for data of both columns but does not combine
+
+arrange(col) #ascending arrange(desc(col)) piped after filter self explan
+
+slice_max(col, n=num) controls how many of the top values you see using n
+
+
+#### Lab 6
+
+distinct(col) looks for every unique entry of said column
+
+distinct(col, col, .keep_all=T)
+
+mutate(colnew=colold/num) used to create new column using an effect of an old one so like colkg=colg/1000
+
+mutate(across(ends_with("measurement"), ~./num)) does what happened above but more widespread using the ends_with func the ~. to R means "all the data"
+
+ %>% clean_names() follows after a read.csv() funct and it cleans up the col names of the data
+ 
+mutate(across(c("col", "col"), tolower)) changes values in data to be lowercase could use across(where(is.character)) instead of c
+
+mutate(across(c("col",..."col"),~ifelse(.==-999, NA, .))) keeps NA's consisten
+
+####Lab 7
+
+summarize(meancol_new=mean(colold)) followed after a filter can be used to find the mean or min or max etc of a specific range of data.
+
+you can select where(is.numeric) then pipe that to a summarize(mean, min, max etc) to get all numeric summaries just make sure to follow it up with a ,na.rm=T to get rid of NA's
+
+n_distinct(col) gives number of distinct variables in data of a col
+
+count(col, sort=T) gives counts of specific columns.
+
+count(col, col) counts specifics columns.
 
 

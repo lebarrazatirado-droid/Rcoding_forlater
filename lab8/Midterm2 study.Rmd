@@ -1,0 +1,26 @@
+---
+title: "Midterm2 study"
+output: html_document
+date: "2026-03-03"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+####Lab 8
+
+group_by(col) gives unique groups of a specific col
+
+pipe a summarize(across(where(is.numeric), ~mean(.x, na.rm=T))) after a group and it gives you a summary of a equation for that group.
+
+
+####Lab 9
+
+pivot_longer(-col we're catorgorizing by
+              names_to= "new col representing multiple cols",
+              values_to= "values of old multiple cols")
+Takes an unnecessarily wide table and converts it into a long table moving cols into values and shifting the values attached to old cols with them
+
+pivot_longer(col:col,      gives a specific range to pivot
+            values_drop_na=T) in end drops all NA's in values.
