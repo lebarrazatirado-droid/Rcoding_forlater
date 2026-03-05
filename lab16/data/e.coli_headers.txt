@@ -1,0 +1,1 @@
+e.coli_refseq.fasta:>U00096.3 Escherichia coli str. K-12 substr. MG1655, complete genome

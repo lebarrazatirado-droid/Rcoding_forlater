@@ -94,6 +94,7 @@ polar_bears %>%
   replace_with_na_all(condition = ~.x %in% c(common_na_numbers, common_na_strings)) %>%
   mutate(denning=na_if(denning, "unknown"),
          mating=na_if(mating, "unknown"))
+#follow up on miss var sum to show what I replaced
 ```
 
 
@@ -103,6 +104,8 @@ polar_bears %>%
 polar_bears %>%
   count(sex) 
 #Sampling isn't equal but I would say it's relatively even for both sexes.
+
+#would help to do count sex, popn
 ```
 
 ```{r}
@@ -253,7 +256,8 @@ ggmap(map1) +
 #}
 
 #shinyApp(ui, server)
-#I tried :(
+#I tried :( 
+#try a boxplot
 ```
 
 ## Submit the Midterm
